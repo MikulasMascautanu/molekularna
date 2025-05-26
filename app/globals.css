@@ -3,57 +3,98 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 340 38% 94%;
-    --primary-foreground: 340 40% 30%;
-    --secondary: 47 82% 87%;
-    --secondary-foreground: 47 40% 30%;
-    --muted: 168 25% 80%;
-    --muted-foreground: 168 40% 30%;
-    --accent: 168 25% 80%;
-    --accent-foreground: 168 40% 30%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 340 38% 94%;
-    --input: 340 38% 94%;
-    --ring: 340 38% 94%;
-    --radius: 0.5rem;
-  }
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 0 0% 3.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 0 0% 3.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 0 0% 3.9%;
+		--primary: 340 38% 94%;
+		--primary-foreground: 340 40% 30%;
+		--secondary: 47 82% 87%;
+		--secondary-foreground: 47 40% 30%;
+		--muted: 168 25% 80%;
+		--muted-foreground: 168 40% 30%;
+		--accent: 168 25% 80%;
+		--accent-foreground: 168 40% 30%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 340 38% 94%;
+		--input: 340 38% 94%;
+		--ring: 340 38% 94%;
+		--radius: 0.5rem;
+	}
 
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 340 38% 94%;
-    --primary-foreground: 340 40% 30%;
-    --secondary: 47 82% 87%;
-    --secondary-foreground: 47 40% 30%;
-    --muted: 168 25% 80%;
-    --muted-foreground: 168 40% 30%;
-    --accent: 168 25% 80%;
-    --accent-foreground: 168 40% 30%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 340 38% 94%;
-    --input: 340 38% 94%;
-    --ring: 340 38% 94%;
-  }
+	.dark {
+		--background: 0 0% 3.9%;
+		--foreground: 0 0% 98%;
+		--card: 0 0% 3.9%;
+		--card-foreground: 0 0% 98%;
+		--popover: 0 0% 3.9%;
+		--popover-foreground: 0 0% 98%;
+		--primary: 340 38% 94%;
+		--primary-foreground: 340 40% 30%;
+		--secondary: 47 82% 87%;
+		--secondary-foreground: 47 40% 30%;
+		--muted: 168 25% 80%;
+		--muted-foreground: 168 40% 30%;
+		--accent: 168 25% 80%;
+		--accent-foreground: 168 40% 30%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 340 38% 94%;
+		--input: 340 38% 94%;
+		--ring: 340 38% 94%;
+	}
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+/* Pastel theme utility classes and animations */
+@keyframes bounce-slow {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+.animate-bounce-slow {
+	animation: bounce-slow 2.5s infinite;
+}
+@keyframes wiggle {
+	0%,
+	100% {
+		transform: rotate(-5deg);
+	}
+	50% {
+		transform: rotate(5deg);
+	}
+}
+.animate-wiggle {
+	animation: wiggle 1.5s infinite;
+	display: inline-block;
+}
+.drop-shadow-glow {
+	filter: drop-shadow(0 0 6px #f9e2e8) drop-shadow(0 0 2px #bedbd3);
+}
+.animate-fade-in {
+	animation: fadeIn 1.2s ease;
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
