@@ -4,6 +4,15 @@
 
 @layer base {
 	:root {
+		--yellow: 48 100% 85%;
+		--yellow-light: 48 100% 92%;
+		--yellow-foreground: 48 40% 30%;
+		--green: 168 25% 80%;
+		--green-light: 168 25% 90%;
+		--green-foreground: 168 40% 30%;
+		--pink: 340 80% 90%;
+		--pink-light: 340 80% 96%;
+		--pink-foreground: 340 40% 30%;
 		--background: 0 0% 100%;
 		--foreground: 0 0% 3.9%;
 		--card: 0 0% 100%;
@@ -27,6 +36,15 @@
 	}
 
 	.dark {
+		--yellow: 48 100% 60%;
+		--yellow-light: 48 100% 30%;
+		--yellow-foreground: 48 40% 98%;
+		--green: 168 25% 40%;
+		--green-light: 168 25% 20%;
+		--green-foreground: 168 40% 98%;
+		--pink: 340 80% 60%;
+		--pink-light: 340 80% 30%;
+		--pink-foreground: 340 40% 98%;
 		--background: 0 0% 3.9%;
 		--foreground: 0 0% 98%;
 		--card: 0 0% 3.9%;

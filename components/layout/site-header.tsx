@@ -12,7 +12,7 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Search, ShoppingCart, User, FlaskConical } from "lucide-react";
+import { Search, User, FlaskConical } from "lucide-react";
 import { allCourses } from "@/lib/data";
 
 export function SiteHeader() {
@@ -47,7 +47,7 @@ export function SiteHeader() {
 					: "bg-[#f9e2e8]"
 			)}
 		>
-			<div className="container flex h-20 items-center rounded-b-3xl">
+			<div className="container flex h-16 items-center rounded-b-3xl">
 				<Link href="/" className="flex items-center gap-3 mr-8">
 					<FlaskConical className="h-8 w-8 text-[#e48ca4] drop-shadow-glow animate-bounce-slow" />
 					<span className="text-2xl font-extrabold tracking-wide text-[#e48ca4] drop-shadow-glow">

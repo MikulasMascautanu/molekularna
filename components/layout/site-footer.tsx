@@ -6,7 +6,7 @@ import Link from "next/link";
 export function SiteFooter() {
 	return (
 		<footer className="border-t bg-[#f9e2e8]">
-			<div className="container px-4 py-8 md:px-6 flex flex-col items-center justify-center gap-5 rounded-t-3xl shadow-lg animate-fade-in">
+			<div className="container px-4 pt-8 pb-20 md:px-6 flex flex-col items-center justify-center gap-5 rounded-t-3xl shadow-lg animate-fade-in">
 				<div className="w-full">
 					<div className="container px-4 py-10 md:px-6">
 						{/* Columns div */}
@@ -102,11 +102,12 @@ export function SiteFooter() {
 					</div>
 				</div>
 			</div>
-			<p className="text-sm text-[#5e5e5e] text-center mt-2 bg-white/40 rounded-xl px-3 py-1 shadow-sm">
-				<span className="inline-block animate-wiggle">✨</span> ©{" "}
-				{new Date().getFullYear()} molekulárna. All rights reserved.{" "}
-				<span className="inline-block animate-wiggle">🧪</span>
-			</p>
+			<div className="w-full flex justify-center bg-white/40 rounded-t-xl pb-4 pt-4 mt-0 shadow-sm">
+				<p className="text-sm text-[#5e5e5e] text-center">
+					© {new Date().getFullYear()} molekulárna. All rights reserved.{" "}
+					<span className="inline-block animate-wiggle">🧪</span>
+				</p>
+			</div>
 		</footer>
 	);
 }
