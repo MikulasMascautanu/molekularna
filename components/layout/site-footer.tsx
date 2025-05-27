@@ -20,21 +20,17 @@ export function SiteFooter() {
 								</span>
 							</div>
 							<div>
-								<h3 className="text-lg font-semibold mb-4">Courses</h3>
+								<h3 className="text-lg font-semibold mb-4">Kurzy</h3>
+								{/* TODO: should be dynamic */}
 								<ul className="space-y-2 text-sm">
 									<li>
-										<Link href="/courses/organic" className="hover:text-primary">
+										<Link href="/kurzy/organic" className="hover:text-pink">
 											Organic Chemistry
 										</Link>
 									</li>
 									<li>
-										<Link href="/courses/inorganic" className="hover:text-primary">
+										<Link href="/kurzy/inorganic" className="hover:text-pink">
 											Inorganic Chemistry
-										</Link>
-									</li>
-									<li>
-										<Link href="/courses/biochemistry" className="hover:text-primary">
-											Biochemistry
 										</Link>
 									</li>
 								</ul>
@@ -71,7 +67,7 @@ export function SiteFooter() {
 									<li>
 										<Link
 											href="mailto:info@molekularna.cz"
-											className="hover:text-primary"
+											className="hover:text-pink-foreground"
 										>
 											info@molekularna.cz
 										</Link>
@@ -82,17 +78,17 @@ export function SiteFooter() {
 								<h3 className="text-lg font-semibold mb-4">Legal</h3>
 								<ul className="space-y-2 text-sm">
 									<li>
-										<Link href="/terms" className="hover:text-primary">
+										<Link href="/terms" className="hover:text-pink-foreground">
 											Terms of Service
 										</Link>
 									</li>
 									<li>
-										<Link href="/privacy" className="hover:text-primary">
+										<Link href="/privacy" className="hover:text-pink-foreground">
 											Privacy Policy
 										</Link>
 									</li>
 									<li>
-										<Link href="/refund" className="hover:text-primary">
+										<Link href="/refund" className="hover:text-pink-foreground">
 											Refund Policy
 										</Link>
 									</li>

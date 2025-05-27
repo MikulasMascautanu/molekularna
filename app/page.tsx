@@ -21,22 +21,19 @@ export default function Home() {
 				className="fixed top-6 right-6 flex flex-col gap-2 p-4 bg-white/80 rounded-xl shadow-lg border border-gray-200 backdrop-blur-sm"
 			>
 				<div className="flex items-center gap-2">
-					<span
-						className="block w-8 h-8 rounded-full border border-gray-300"
-						style={{ background: "var(--primary)" }}
-					/>
-					<span className="text-xs font-medium text-gray-700">
-						Primary
-						<br />
-						<span className="text-[10px] text-gray-400">--primary</span>
-					</span>
-				</div>
-				<div className="flex items-center gap-2">
 					<span className="bg-yellow block w-8 h-8 rounded-full border border-gray-300" />
 					<span className="text-xs font-medium text-gray-700">
 						Yellow
 						<br />
 						<span className="text-[10px] text-gray-400">--yellow</span>
+					</span>
+				</div>
+				<div className="flex items-center gap-2">
+					<span className="bg-yellow-foreground block w-8 h-8 rounded-full border border-gray-300" />
+					<span className="text-xs font-medium text-gray-700">
+						Yellow Foreground
+						<br />
+						<span className="text-[10px] text-gray-400">--yellow-foreground</span>
 					</span>
 				</div>
 				<div className="flex items-center gap-2">
@@ -48,6 +45,14 @@ export default function Home() {
 					</span>
 				</div>
 				<div className="flex items-center gap-2">
+					<span className="bg-pink-foreground block w-8 h-8 rounded-full border border-gray-300" />
+					<span className="text-xs font-medium text-gray-700">
+						Pink Foreground
+						<br />
+						<span className="text-[10px] text-gray-400">--pink-foreground</span>
+					</span>
+				</div>
+				<div className="flex items-center gap-2">
 					<span className="bg-green block w-8 h-8 rounded-full border border-gray-300" />
 					<span className="text-xs font-medium text-gray-700">
 						Green
@@ -56,11 +61,11 @@ export default function Home() {
 					</span>
 				</div>
 				<div className="flex items-center gap-2">
-					<span className="bg-muted block w-8 h-8 rounded-full border border-gray-300" />
+					<span className="bg-green-foreground block w-8 h-8 rounded-full border border-gray-300" />
 					<span className="text-xs font-medium text-gray-700">
-						Muted
+						Green Foreground
 						<br />
-						<span className="text-[10px] text-gray-400">--muted</span>
+						<span className="text-[10px] text-gray-400">--green-foreground</span>
 					</span>
 				</div>
 			</div>
@@ -72,17 +77,17 @@ export default function Home() {
 							<div className="flex flex-col justify-center space-y-4">
 								<div className="space-y-2">
 									<h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-										Master Chemistry with Expert-Led Courses
+										Zmákni středoškolskou chemii během školního roku i před maturitou!
 									</h1>
 									<p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-										Comprehensive chemistry education with interactive lessons, practice
-										problems, and real-world applications.
+										Komplexní vzdělávání v chemii s interaktivními lekcemi, cvičnými
+										problémy a aplikacemi v reálném světě.
 									</p>
 								</div>
 								<div className="flex flex-col gap-2 sm:flex-row">
 									<Button asChild size="lg" className="gap-1">
-										<Link href="/courses">
-											Explore Courses <ArrowRight className="h-4 w-4 ml-1" />
+										<Link href="/kurzy">
+											Kurzy <ArrowRight className="h-4 w-4 ml-1" />
 										</Link>
 									</Button>
 									<Button asChild variant="outline" size="lg">

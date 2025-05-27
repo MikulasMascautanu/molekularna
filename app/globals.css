@@ -4,13 +4,13 @@
 
 @layer base {
 	:root {
-		--yellow: 48 100% 85%;
-		--yellow-light: 48 100% 92%;
-		--yellow-foreground: 48 40% 30%;
+		--yellow: 48 80% 85%;
+		--yellow-light: 48 80% 92%;
+		--yellow-foreground: 48 30% 30%;
 		--green: 168 25% 80%;
 		--green-light: 168 25% 90%;
 		--green-foreground: 168 40% 30%;
-		--pink: 340 80% 90%;
+		--pink: 340 72% 94%;
 		--pink-light: 340 80% 96%;
 		--pink-foreground: 340 40% 30%;
 		--background: 0 0% 100%;

@@ -13,7 +13,7 @@ import {
 	NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Search, User, FlaskConical } from "lucide-react";
-import { allCourses } from "@/lib/data";
+import { courses } from "@/lib/data";
 
 export function SiteHeader() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -27,13 +27,8 @@ export function SiteHeader() {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	const organicCourses = allCourses.filter((course) =>
-		course.slug.includes("organic")
-	);
-	const inorganicCourses = allCourses.filter((course) =>
-		course.slug.includes("inorganic")
-	);
-	const otherCourses = allCourses.filter(
+	// Possibly for the future
+	const otherCourses = courses.filter(
 		(course) =>
 			!course.slug.includes("organic") && !course.slug.includes("inorganic")
 	);
@@ -64,27 +59,10 @@ export function SiteHeader() {
 									<div className="grid w-[600px] gap-3 p-4 md:grid-cols-2">
 										<div>
 											<h4 className="mb-2 text-sm font-medium">Organic Chemistry</h4>
-											{organicCourses.map((course) => (
+											{courses.map((course) => (
 												<Link
 													key={course.id}
-													href={`/courses/${course.slug}`}
-													className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-												>
-													<div className="text-sm font-medium leading-none">
-														{course.title}
-													</div>
-													<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-														{course.description}
-													</p>
-												</Link>
-											))}
-										</div>
-										<div>
-											<h4 className="mb-2 text-sm font-medium">Inorganic Chemistry</h4>
-											{inorganicCourses.map((course) => (
-												<Link
-													key={course.id}
-													href={`/courses/${course.slug}`}
+													href={`/kurzy/${course.slug}`}
 													className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
 												>
 													<div className="text-sm font-medium leading-none">

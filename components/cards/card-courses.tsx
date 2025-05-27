@@ -3,15 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
-interface CardCourseProps {
-	number: number;
-	title: string;
-	description: string;
-	features: React.ReactNode[];
-	price: string;
-	href: string;
-}
+import { courses } from "../../lib/data";
+import { Course } from "../../types";
 
 function CardCourse({
 	number,
@@ -19,8 +12,8 @@ function CardCourse({
 	description,
 	features,
 	price,
-	href,
-}: CardCourseProps) {
+	slug,
+}: Course & { number: number }) {
 	return (
 		<motion.div
 			whileHover={{ y: -5 }}
@@ -51,14 +44,14 @@ function CardCourse({
 						))}
 					</ul>
 				</div>
-				<div className="p-4 flex justify-between items-center bg-muted/40">
-					<div className="font-extrabold text-2xl md:text-3xl">{price}</div>
-				   <Button
-					   asChild
-					   className="font-medium text-base px-6 py-2 rounded-md shadow transition-colors hover:bg-pink-light hover:text-pink-foreground focus:bg-pink-light focus:text-pink-foreground"
-				   >
-					   <Link href={href}>Zobrazit</Link>
-				   </Button>
+				<div className="p-6 flex justify-between items-center bg-green-light">
+					<div className="font-extrabold text-2xl md:text-3xl">{price} Kč</div>
+					<Button
+						asChild
+						className="font-medium bg-pink text-base px-6 py-2 rounded-md shadow transition-colors hover:bg-pink-light hover:text-pink-foreground focus:bg-pink-light focus:text-pink-foreground"
+					>
+						<Link href={slug}>Zobrazit</Link>
+					</Button>
 				</div>
 			</div>
 		</motion.div>
@@ -67,14 +60,14 @@ function CardCourse({
 
 export function CardCourses() {
 	return (
-		<section className="bg-muted py-12 md:py-24">
+		<section className="bg-green py-12 md:py-24">
 			<div className="container px-4 md:px-6">
 				<div className="flex flex-col items-center justify-center space-y-4 text-center">
 					<div className="space-y-2">
 						<h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
 							Aktuálně nabízené kurzy
 						</h2>
-						<p className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
+						<p className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-xl/relaxed">
 							Momentálně nabízíme kurzy zaměřené na samostudium pro střední školy a
 							přípravu na maturitu.
 						</p>
@@ -82,52 +75,18 @@ export function CardCourses() {
 				</div>
 
 				<div className="mx-auto grid max-w-4xl gap-8 py-12 lg:grid-cols-2">
-					{[
-						{
-							number: 1,
-							title: "Samostudium pro střední školy",
-							description:
-								"Samostudium z chemie pro střední školy, vhodné pro studenty, kteří se chtějí doučit chemii samostatně nebo si jen zopakovat látku.",
-							features: [
-								"Výuka formou videozáznamů",
-								"Pracovní listy s klíčem",
-								"Modelové testové otázky",
-								"Praktické příklady k procvičení",
-								"Možnost koupit jako samostatný ročník nebo balíček všech 4 ročníků",
-							],
-							price: "od 990 Kč",
-							href: "/courses/samostudium",
-						},
-						{
-							number: 2,
-							title: "Příprava na maturitu",
-							description:
-								"Kurz zaměřený na praktickou přípravu k maturitě z chemie, obsahuje kurz Samostudium pro střední školy, na který se odkazuje.",
-							features: [
-								<>
-									Obsahuje{" "}
-									<span className="font-bold">Samostudium pro střední školy</span>
-								</>,
-								"Ukázkové příklady a vysvětlení",
-								"Tipy k maturitě z první ruky",
-								"Doporučené zdroje pro další studium",
-								"Možnost konzultací a dotazů",
-							],
-							price: "od 1 490 Kč",
-							href: "/courses/maturita",
-						},
-					].map((card) => (
-						<CardCourse key={card.number} {...card} />
+					{courses.map((card, i) => (
+						<CardCourse key={card.id} {...card} number={i + 1} />
 					))}
 				</div>
 
 				<div className="flex justify-center">
-		  <Button
-			asChild
-			className="font-medium text-base px-6 py-2 rounded-md shadow transition-colors hover:bg-pink-light hover:text-pink-foreground focus:bg-pink-light focus:text-pink-foreground"
-		  >
-			<Link href="/courses">Všechny kurzy</Link>
-		  </Button>
+					<Button
+						asChild
+						className="font-medium text-base px-6 py-2 rounded-md shadow transition-colors hover:bg-pink-light hover:text-pink-foreground focus:bg-pink-light focus:text-pink-foreground"
+					>
+						<Link href="/kurzy">Všechny kurzy</Link>
+					</Button>
 				</div>
 			</div>
 		</section>
