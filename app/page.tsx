@@ -4,71 +4,67 @@ import { Button } from "@/components/ui/button";
 import { CardFeature } from "@/components/cards/card-feature";
 import { CardTestimonial } from "@/components/cards/card-testimonial";
 import { CardCourses } from "@/components/cards/card-courses";
-import {
-	ArrowRight,
-	Award,
-	BookOpen,
-	CheckCircle2,
-	FileCheck,
-} from "lucide-react";
+import { Award, BookOpen, FileCheck } from "lucide-react";
 
 export default function Home() {
 	return (
 		<>
 			{/* Floating color palette for reference */}
-			<div
-				style={{ zIndex: 1000 }}
-				className="fixed top-6 right-6 flex flex-col gap-2 p-4 bg-white/80 rounded-xl shadow-lg border border-gray-200 backdrop-blur-sm"
-			>
-				<div className="flex items-center gap-2">
-					<span className="bg-yellow block w-8 h-8 rounded-full border border-gray-300" />
-					<span className="text-xs font-medium text-gray-700">
-						Yellow
-						<br />
-						<span className="text-[10px] text-gray-400">--yellow</span>
-					</span>
+			{process.env.NODE_ENV === "development" && (
+				<div
+					style={{ zIndex: 1000 }}
+					className="fixed top-6 right-6 flex flex-col gap-2 p-4 bg-white/80 rounded-xl shadow-lg border border-gray-200 backdrop-blur-sm"
+				>
+					<div className="flex items-center gap-2">
+						<span className="bg-yellow block w-8 h-8 rounded-full border border-gray-300" />
+						<span className="text-xs font-medium text-gray-700">
+							Yellow
+							<br />
+							<span className="text-[10px] text-gray-400">--yellow</span>
+						</span>
+					</div>
+					<div className="flex items-center gap-2">
+						<span className="bg-yellow-foreground block w-8 h-8 rounded-full border border-gray-300" />
+						<span className="text-xs font-medium text-gray-700">
+							Yellow Foreground
+							<br />
+							<span className="text-[10px] text-gray-400">--yellow-foreground</span>
+						</span>
+					</div>
+					<div className="flex items-center gap-2">
+						<span className="bg-pink block w-8 h-8 rounded-full border border-gray-300" />
+						<span className="text-xs font-medium text-gray-700">
+							Pink
+							<br />
+							<span className="text-[10px] text-gray-400">--pink</span>
+						</span>
+					</div>
+					<div className="flex items-center gap-2">
+						<span className="bg-pink-foreground block w-8 h-8 rounded-full border border-gray-300" />
+						<span className="text-xs font-medium text-gray-700">
+							Pink Foreground
+							<br />
+							<span className="text-[10px] text-gray-400">--pink-foreground</span>
+						</span>
+					</div>
+					<div className="flex items-center gap-2">
+						<span className="bg-green block w-8 h-8 rounded-full border border-gray-300" />
+						<span className="text-xs font-medium text-gray-700">
+							Green
+							<br />
+							<span className="text-[10px] text-gray-400">--green</span>
+						</span>
+					</div>
+					<div className="flex items-center gap-2">
+						<span className="bg-green-foreground block w-8 h-8 rounded-full border border-gray-300" />
+						<span className="text-xs font-medium text-gray-700">
+							Green Foreground
+							<br />
+							<span className="text-[10px] text-gray-400">--green-foreground</span>
+						</span>
+					</div>
 				</div>
-				<div className="flex items-center gap-2">
-					<span className="bg-yellow-foreground block w-8 h-8 rounded-full border border-gray-300" />
-					<span className="text-xs font-medium text-gray-700">
-						Yellow Foreground
-						<br />
-						<span className="text-[10px] text-gray-400">--yellow-foreground</span>
-					</span>
-				</div>
-				<div className="flex items-center gap-2">
-					<span className="bg-pink block w-8 h-8 rounded-full border border-gray-300" />
-					<span className="text-xs font-medium text-gray-700">
-						Pink
-						<br />
-						<span className="text-[10px] text-gray-400">--pink</span>
-					</span>
-				</div>
-				<div className="flex items-center gap-2">
-					<span className="bg-pink-foreground block w-8 h-8 rounded-full border border-gray-300" />
-					<span className="text-xs font-medium text-gray-700">
-						Pink Foreground
-						<br />
-						<span className="text-[10px] text-gray-400">--pink-foreground</span>
-					</span>
-				</div>
-				<div className="flex items-center gap-2">
-					<span className="bg-green block w-8 h-8 rounded-full border border-gray-300" />
-					<span className="text-xs font-medium text-gray-700">
-						Green
-						<br />
-						<span className="text-[10px] text-gray-400">--green</span>
-					</span>
-				</div>
-				<div className="flex items-center gap-2">
-					<span className="bg-green-foreground block w-8 h-8 rounded-full border border-gray-300" />
-					<span className="text-xs font-medium text-gray-700">
-						Green Foreground
-						<br />
-						<span className="text-[10px] text-gray-400">--green-foreground</span>
-					</span>
-				</div>
-			</div>
+			)}
 			<div className="relative w-full">
 				{/* Hero Section */}
 				<section className="relative overflow-hidden bg-gradient-to-b from-background to-primary/5 pt-28 md:pt-28 pb-44 md:pb-44">
