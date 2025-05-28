@@ -83,7 +83,7 @@ export default function Home() {
 										Zmákni středoškolskou chemii jak během školního roku tak i před
 										maturitou!
 									</h1>
-									<p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+									<p className="max-w-[600px] text-gray-600 md:text-xl dark:text-gray-400">
 										Komplexní vzdělávání v chemii s interaktivními lekcemi, cvičnými
 										problémy a aplikacemi v reálném světě.
 									</p>
@@ -142,7 +142,7 @@ export default function Home() {
 								<h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
 									Proč se učit chemii s námi?
 								</h2>
-								<p className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
+								<p className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-xl/relaxed">
 									Naše kurzy kombinují teoretické a praktické znalosti tak, aby ti učivo
 									dávalo smysl a bylo snadné si ho zapamatovat.
 								</p>

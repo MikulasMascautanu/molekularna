@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import { Metadata } from "next";
-import { allCourses } from "@/lib/data";
+import { courses } from "@/lib/data";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -32,7 +31,7 @@ export async function generateMetadata({
 }: {
 	params: { slug: string };
 }): Promise<Metadata> {
-	const course = allCourses.find((course) => course.slug === params.slug);
+	const course = courses.find((course) => course.slug === params.slug);
 
 	if (!course) {
 		return {
@@ -44,14 +43,12 @@ export async function generateMetadata({
 	return {
 		title: `${course.title} | ChemistryMaster`,
 		description: course.description,
-		keywords: `chemistry course, ${course.title.toLowerCase()}, chemistry education, ${
-			course.level
-		} chemistry`,
+		keywords: `chemistry course, ${course.title.toLowerCase()}, chemistry education, chemistry`,
 	};
 }
 
 export async function generateStaticParams() {
-	return allCourses.map((course) => ({
+	return courses.map((course) => ({
 		slug: course.slug,
 	}));
 }
@@ -183,7 +180,7 @@ export default function CourseDetailPage({
 }: {
 	params: { slug: string };
 }) {
-	const course = allCourses.find((course) => course.slug === params.slug);
+	const course = courses.find((course) => course.slug === params.slug);
 
 	if (!course) {
 		notFound();
@@ -195,15 +192,6 @@ export default function CourseDetailPage({
 		0
 	);
 
-	// Find related courses (same level or containing similar keywords in slug)
-	const relatedCourses = allCourses
-		.filter(
-			(c) =>
-				c.id !== course.id &&
-				(c.level === course.level || c.slug.includes(course.slug.split("-")[0]))
-		)
-		.slice(0, 3);
-
 	// Calculate average rating
 	const averageRating =
 		reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
@@ -212,19 +200,11 @@ export default function CourseDetailPage({
 		<div className="bg-background">
 			{/* Hero section with course image */}
 			<div className="relative h-[300px] md:h-[400px]">
-				<Image
-					src={course.image}
-					alt={course.title}
-					fill
-					className="object-cover"
-					priority
-				/>
+				{/* Removed course.image */}
 				<div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20" />
 				<div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
 					<div className="container max-w-6xl">
-						<Badge className="mb-3" variant="outline">
-							{course.level.charAt(0).toUpperCase() + course.level.slice(1)}
-						</Badge>
+						{/* Removed course.level */}
 						<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
 							{course.title}
 						</h1>
@@ -249,11 +229,11 @@ export default function CourseDetailPage({
 								<div>
 									<h2 className="text-2xl font-bold mb-4">About This Course</h2>
 									<p className="text-muted-foreground">
-										This comprehensive {course.level} course is designed to provide
-										students with a deep understanding of {course.title.toLowerCase()}.
-										Through a combination of video lectures, interactive exercises, and
-										practical applications, you'll develop the skills needed to excel in
-										this critical area of chemistry.
+										This comprehensive course is designed to provide students with a deep
+										understanding of {course.title.toLowerCase()}. Through a combination
+										of video lectures, interactive exercises, and practical applications,
+										you'll develop the skills needed to excel in this critical area of
+										chemistry.
 									</p>
 								</div>
 
@@ -516,13 +496,7 @@ export default function CourseDetailPage({
 								<div className="text-xl font-semibold">{course.duration}</div>
 								<div className="text-xs text-muted-foreground">Duration</div>
 							</div>
-							<div className="border rounded-lg p-4 flex flex-col items-center text-center">
-								<BarChart className="h-6 w-6 text-primary mb-2" />
-								<div className="text-xl font-semibold">
-									{course.level.charAt(0).toUpperCase() + course.level.slice(1)}
-								</div>
-								<div className="text-xs text-muted-foreground">Level</div>
-							</div>
+							{/* Removed course.level */}
 							<div className="border rounded-lg p-4 flex flex-col items-center text-center">
 								<Award className="h-6 w-6 text-primary mb-2" />
 								<div className="text-xl font-semibold">Yes</div>
@@ -531,17 +505,6 @@ export default function CourseDetailPage({
 						</div>
 					</div>
 				</div>
-
-				{/* Related courses */}
-				{relatedCourses.length > 0 && (
-					<div className="mt-16">
-						<h2 className="text-2xl font-bold mb-6">Related Courses</h2>
-						<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-							{/* {relatedCourses.map((relatedCourse) => (
-							))} */}
-						</div>
-					</div>
-				)}
 			</div>
 		</div>
 	);

@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { allCourses } from "@/lib/data";
+import { courses } from "@/lib/data";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -27,13 +27,7 @@ function CoursesSkeleton() {
 }
 
 export default function CoursesPage() {
-	const organicCourses = allCourses.filter((course) =>
-		course.slug.includes("organic")
-	);
-	const inorganicCourses = allCourses.filter((course) =>
-		course.slug.includes("inorganic")
-	);
-	const otherCourses = allCourses.filter(
+	const otherCourses = courses.filter(
 		(course) =>
 			!course.slug.includes("organic") && !course.slug.includes("inorganic")
 	);

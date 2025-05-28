@@ -32,24 +32,15 @@ export function CardCourse({ course, className }: CardCourseProps) {
 		>
 			<Card className={cn("overflow-hidden h-full flex flex-col", className)}>
 				<div className="relative aspect-video overflow-hidden">
-					<Image
-						src={course.image}
+					{/* Removed course.image */}
+					{/* <Image
 						alt={course.title}
 						fill
 						className="object-cover transition-transform duration-300 hover:scale-105"
-					/>
+					/> */}
 					<div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
 					<div className="absolute bottom-4 left-4">
-						{course.level && (
-							<Badge
-								className={cn(
-									"font-medium",
-									levelColor[course.level as keyof typeof levelColor]
-								)}
-							>
-								{course.level.charAt(0).toUpperCase() + course.level.slice(1)}
-							</Badge>
-						)}
+						{/* Removed course.level */}
 					</div>
 				</div>
 				<CardContent className="flex-1 p-6">
