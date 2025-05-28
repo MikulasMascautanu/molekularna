@@ -71,13 +71,17 @@ export default function Home() {
 			</div>
 			<div className="relative w-full">
 				{/* Hero Section */}
-				<section className="relative overflow-hidden bg-gradient-to-b from-background to-primary/5 pt-16 md:pt-24">
+				<section className="relative overflow-hidden bg-gradient-to-b from-background to-primary/5 pt-28 md:pt-28 pb-44 md:pb-44">
 					<div className="container px-4 md:px-6">
 						<div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-							<div className="flex flex-col justify-center space-y-4">
-								<div className="space-y-2">
-									<h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-										Zmákni středoškolskou chemii během školního roku i před maturitou!
+							<div className="flex flex-col space-y-4">
+								<div className="space-y-8">
+									<h1
+										className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
+										style={{ lineHeight: "1.1" }}
+									>
+										Zmákni středoškolskou chemii jak během školního roku tak i před
+										maturitou!
 									</h1>
 									<p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
 										Komplexní vzdělávání v chemii s interaktivními lekcemi, cvičnými
@@ -85,13 +89,19 @@ export default function Home() {
 									</p>
 								</div>
 								<div className="flex flex-col gap-2 sm:flex-row">
-									<Button asChild size="lg" className="gap-1">
-										<Link href="/kurzy">
-											Kurzy <ArrowRight className="h-4 w-4 ml-1" />
-										</Link>
+									<Button
+										asChild
+										size="lg"
+										className="font-medium bg-pink text-pink-foreground px-6 py-2 rounded-md shadow transition-colors hover:bg-pink-light hover:text-pink-foreground focus:bg-pink-light focus:text-pink-foreground"
+									>
+										<Link href="/kurzy">Nabídka kurzů</Link>
 									</Button>
-									<Button asChild variant="outline" size="lg">
-										<Link href="/about">Learn More</Link>
+									<Button
+										asChild
+										size="lg"
+										className="font-medium bg-green text-green-foreground px-6 py-2 rounded-md shadow transition-colors hover:bg-green-light hover:text-green-foreground focus:bg-green-light focus:text-green-foreground"
+									>
+										<Link href="/about">Ukázkový kurz</Link>
 									</Button>
 								</div>
 							</div>
@@ -99,7 +109,7 @@ export default function Home() {
 								<div className="relative h-[350px] w-[350px] md:h-[450px] md:w-[450px]">
 									<Image
 										src="https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg"
-										alt="Chemistry laboratory equipment"
+										alt="Chemie"
 										fill
 										className="object-cover rounded-xl"
 										priority
@@ -110,16 +120,15 @@ export default function Home() {
 					</div>
 
 					{/* Wave decoration */}
-					<div className="absolute inset-x-0 bottom-0">
+					<div className="pointer-events-none absolute inset-x-0 bottom-0">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 1440 320"
-							className="w-full h-auto text-background"
+							className="w-full h-auto"
 						>
 							<path
-								fill="currentColor"
-								fillOpacity="1"
-								d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,149.3C960,128,1056,128,1152,133.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+								fill="hsl(var(--yellow))"
+								d="M 0 105 C 94 178 295 190 356 191 C 485 194 600 170 720 150 C 840 130 963 69 1171 88 C 1330 109 1472 173 1552 251 L 1670 383 L 1676 329 L 1500 320 L 1440 320 L 1380 320 C 1320 320 1200 320 1080 320 C 960 320 840 320 720 320 C 600 320 480 320 360 320 C 240 320 120 320 60 320 L 0 320 Z"
 							></path>
 						</svg>
 					</div>
@@ -130,15 +139,12 @@ export default function Home() {
 					<div className="container px-4 md:px-6">
 						<div className="flex flex-col items-center justify-center space-y-4 text-center">
 							<div className="space-y-2">
-								<div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary">
-									Why Choose Us
-								</div>
 								<h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-									Learning Chemistry Has Never Been Easier
+									Proč se učit chemii s námi?
 								</h2>
 								<p className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
-									Our courses are designed to make complex chemistry concepts accessible
-									and engaging for students of all levels.
+									Naše kurzy kombinují teoretické a praktické znalosti tak, aby ti učivo
+									dávalo smysl a bylo snadné si ho zapamatovat.
 								</p>
 							</div>
 						</div>
@@ -170,16 +176,9 @@ export default function Home() {
 					<div className="container px-4 md:px-6">
 						<div className="flex flex-col items-center justify-center space-y-4 text-center">
 							<div className="space-y-2">
-								<div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary">
-									Testimonials
-								</div>
 								<h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-									What Our Students Say
+									Recenze od našich studentů
 								</h2>
-								<p className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
-									Don't just take our word for it. Here's what students have to say about
-									our courses.
-								</p>
 							</div>
 						</div>
 
